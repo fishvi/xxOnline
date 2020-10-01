@@ -1,11 +1,12 @@
 # xxOnline在线学习网
 [![Python](https://img.shields.io/badge/Python-3.7.3-blue)](https://www.python.org/downloads/release/python-373/)
 [![Django](https://img.shields.io/badge/Django-2.2-blue)](https://docs.djangoproject.com/en/2.2/releases/)
-[![MySQL](https://img.shields.io/badge/MySQL-5.7-blue)](https://dev.mysql.com/downloads/mysql/)
 [![xadmin](https://img.shields.io/badge/xadmin-0.6.0-blue)](https://github.com/sshwsfc/xadmin)
+[![MySQL](https://img.shields.io/badge/MySQL-5.7-blue)](https://dev.mysql.com/downloads/mysql/)
+[![redus](https://img.shields.io/badge/redis-3.0.503-blue)](https://github.com/ServiceStack/redis-windows/tree/master/downloads)
 
 
-基于django和xadmin的在线教育平台
+基于Django2.2和xadmin的在线教育学习平台
 
 ## 安装依赖  
 ```python
@@ -78,7 +79,9 @@ python manage.py runserver
 浏览器访问：http://localhost:8000/xadmin 或者 http://127.0.0.1:8000/xadmin
 
 &nbsp;  
+&nbsp;  
 &nbsp; 
+***
 ### ✨*写在最后的碎碎念：*
 1. 关于通过**手机验证码**的登录/注册，我这里用的是云片网，但是云片网的签名实在是难以申请...为了测试，我就直接在redis中用get得到验证码了。如果你申请到了签名或是有了其他替代方案，请自行修改[settings.py](https://github.com/fishvi/xxOnline/blob/master/xxOnline/settings.py)和[YunPian.py](https://github.com/fishvi/xxOnline/blob/master/apps/utils/YunPian.py)中的内容。  
 
