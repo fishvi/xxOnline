@@ -80,7 +80,7 @@ python manage.py runserver
 &nbsp;  
 &nbsp; 
 ### ✨*写在最后的碎碎念：*
-1. 关于通过**手机验证码**的登录/注册，我这里用的是云片网，但是云片网的签名实在是难以申请...为了测试，我就直接在redis中用get得到验证码了。如果你申请到了签名或是有了其他替代方案，请自行修改这两个文件。  
+1. 关于通过**手机验证码**的登录/注册，我这里用的是云片网，但是云片网的签名实在是难以申请...为了测试，我就直接在redis中用get得到验证码了。如果你申请到了签名或是有了其他替代方案，请自行修改[settings.py](https://github.com/fishvi/xxOnline/blob/master/xxOnline/settings.py)和[YunPian.py](https://github.com/fishvi/xxOnline/blob/master/apps/utils/YunPian.py)中的内容。  
 
 2. 关于**课程视频**，可以用到阿里云的对象存储OSS进行管理。
 
