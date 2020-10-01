@@ -6,7 +6,7 @@
 [![redus](https://img.shields.io/badge/redis-3.0.503-blue)](https://github.com/ServiceStack/redis-windows/tree/master/downloads)
 
 
-基于Django2.2和xadmin的在线教育学习平台
+**基于Django2.2和xadmin的在线教育学习平台**
 
 ## 安装依赖  
 ```python
