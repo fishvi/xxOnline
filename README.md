@@ -28,7 +28,7 @@ pip install -r requirements.txt
 >    }
 >}
 >```
->**注意：** 如果你是Windows，也许在安装mysqlclient时会出错，请前往[这里](https://www.lfd.uci.edu/~gohlke/pythonlibs/)找到mysqlclient下载后直接pip install。
+>**注意：** 如果是Windows，也许在安装mysqlclient时会出错，请前往[这里](https://www.lfd.uci.edu/~gohlke/pythonlibs/)找到mysqlclient下载后直接pip install。
 
 ### redis：
 #### 如果Linux：  
