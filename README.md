@@ -64,7 +64,7 @@ python manage.py runserver
 &nbsp;  
 ## 后台管理  
 创建一个管理员账号：  
-```python
+```
 python manage.py createsuperuser
 
 Username: admin  # 键入你想要使用的用户名，然后按下回车键
@@ -78,7 +78,7 @@ Password (again): *********
 ```
 
 启动项目：
-```
+```python
 python manage.py runserver
 ```
 
