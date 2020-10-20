@@ -14,28 +14,34 @@ pip install -r requirements.txt
 ```
 
 ### MySQL：
->1. 下载[MySQL](https://dev.mysql.com/downloads/mysql/)
+>1. 下载[MySQL 5.7](https://dev.mysql.com/downloads/mysql/)（最新版MySQL可能会出现某些问题）
 >2. 新建数据库
 >3. 在settings.py中配置MySQL  
 >```python
->DATABASES = {
->    'default': {
->        'ENGINE': 'django.db.backends.mysql',
->        'NAME': '数据库名称',
->        'USER': '用户名',
->        'PASSWORD': '密码',
->        'HOST': '127.0.0.1'
->    }
->}
+>   DATABASES = {
+>       'default': {
+>           'ENGINE': 'django.db.backends.mysql',
+>           'NAME': '数据库名称',
+>           'USER': '用户名',
+>           'PASSWORD': '密码',
+>           'HOST': '127.0.0.1'
+>       }
+>   }
 >```
->**注意：** 如果是Windows，也许在安装mysqlclient时会出错，请前往[这里](https://www.lfd.uci.edu/~gohlke/pythonlibs/)找到mysqlclient下载后直接pip install。
+>4. 安装mysqlclient
+>```python
+>    pip install mysqlclient
+>```  
+>&emsp;&emsp;**注意：** 如果是Windows，也许直接安装mysqlclient会出错，请前往[这里](https://www.lfd.uci.edu/~gohlke/pythonlibs/)找到mysqlclient下载，再pip install下载的文件。  
 
 ### redis：
-#### 如果Linux：  
-    $ sudo apt-get install redis-server
-    $ sudo apt-get install redis-cli
-#### 如果Windows:
->请前往[这里](https://github.com/ServiceStack/redis-windows/tree/master/downloads)下载安装
+##### &emsp;如果Linux：  
+        $ sudo apt-get install redis-server
+        $ sudo apt-get install redis-cli
+##### &emsp;如果Windows:
+>&emsp;&nbsp;&nbsp;请前往[这里](https://github.com/ServiceStack/redis-windows/tree/master/downloads)下载安装  
+
+&emsp;关于redis在本项目中的用处请往下翻至底。
 
 &nbsp;  
 &nbsp;  
@@ -68,7 +74,7 @@ Email address: admin@example.com  # 然后提示你输入想要使用的邮件�
 Password: **********  # 输入密码
 Password (again): *********
 
-Superuser created successfully.
+>> Superuser created successfully.
 ```
 
 启动项目：
@@ -82,13 +88,14 @@ python manage.py runserver
 &nbsp;  
 &nbsp; 
 ***
-### ✨*写在最后的碎碎念：*
-1. 关于通过**手机验证码**的登录/注册，我这里用的是云片网，但是云片网的签名实在是难以申请...为了测试，我就直接在redis中用get得到验证码了。如果你申请到了签名或是有了其他替代方案，请自行修改[settings.py](https://github.com/fishvi/xxOnline/blob/master/xxOnline/settings.py)和[YunPian.py](https://github.com/fishvi/xxOnline/blob/master/apps/utils/YunPian.py)中的内容。  
+### ✨*写在最后：*
+1. 关于**手机验证码：**  
+&emsp;在本项目中的手机验证码是通过一个[随机函数](https://github.com/fishvi/xxOnline/blob/master/apps/utils/random_str.py)生成了四位随机数，然后存入redis，并设定了一个有效时间60s。然后使用第三方短信平台发送生成的随机数至用户手机中，我这里用的是[云片网](https://www.yunpian.com/product/domestic-sms)。  
+&emsp;但是云片网的签名实在是难以申请......如果你也同样暂时申请不下来，别慌，我已经写好了用于[测试的代码](https://github.com/fishvi/xxOnline/blob/master/apps/utils/YunPian.py)，启动redis后(redis-server)，再用get命令(redis-cli)，即可得到刚刚生成的验证码。  
+&emsp;如果你申请到了签名或是有了其他替代方案，请自行修改[settings.py](https://github.com/fishvi/xxOnline/blob/master/xxOnline/settings.py)和[YunPian.py](https://github.com/fishvi/xxOnline/blob/master/apps/utils/YunPian.py)中的相关内容。  
 
-2. 关于**课程视频**，可以用到阿里云的对象存储OSS进行管理。
+2. 关于**课程视频：**  
+&emsp;可以用到阿里云的对象存储OSS进行管理。
 
-3. 有些**细节**问题，如后台上传的图片在前端页面显示不全以及缩放不协调等问题，待我再看看。
-
-4. 关于**部署**，后面再更新...
-
-5. **任重而道远。**
+2. 关于**部署：**  
+&emsp;个人使用的uwsgi和nginx。
