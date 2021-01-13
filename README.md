@@ -3,7 +3,7 @@
 [![Django](https://img.shields.io/badge/Django-2.2-blue)](https://docs.djangoproject.com/en/2.2/releases/)
 [![xadmin](https://img.shields.io/badge/xadmin-0.6.0-blue)](https://github.com/sshwsfc/xadmin)
 [![MySQL](https://img.shields.io/badge/MySQL-5.7-blue)](https://dev.mysql.com/downloads/mysql/)
-[![redus](https://img.shields.io/badge/redis-3.0.503-blue)](https://github.com/ServiceStack/redis-windows/tree/master/downloads)
+[![redis](https://img.shields.io/badge/redis-3.0.503-blue)](https://github.com/ServiceStack/redis-windows/tree/master/downloads)
 
 
 **基于Django2.2和xadmin的在线教育学习平台**
@@ -96,6 +96,3 @@ python manage.py runserver
 
 2. 关于**课程视频：**  
 &emsp;可以用到阿里云的对象存储OSS进行管理。
-
-2. 关于**部署：**  
-&emsp;个人使用的uwsgi和nginx。
